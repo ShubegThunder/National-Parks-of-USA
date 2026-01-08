@@ -1,0 +1,244 @@
+/* ========== Base Reset ========== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Merriweather', serif;
+  display: flex;
+  background:
+    linear-gradient(to right, rgba(255, 243, 224, 0.85), rgba(255, 232, 204, 0.85)),
+    url('bimg/b1.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #2d1b0d;
+  overflow: hidden;
+}
+
+/* ========== Sidebar (Nav) ========== */
+nav {
+  width: 280px;
+  min-width: 250px;
+  background: linear-gradient(180deg, #7b3f00, #c97b3b);
+  color: white;
+  padding: 30px 20px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  overflow-y: auto;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 6px 0 16px rgba(0, 0, 0, 0.15);
+  animation: slideInNav 1s ease;
+  font-family: 'Merriweather', serif;
+}
+
+@keyframes slideInNav {
+  0% { opacity: 0; transform: translateX(-60px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+nav h2 {
+  font-family: 'Rock Salt', cursive;  /* fancy font for headings */
+  font-size: 2.3em;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #ffedd5;
+  border-bottom: 2px solid #ffcd94;
+  padding-bottom: 10px;
+}
+
+nav ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+nav li { margin: 12px 0; }
+
+nav a {
+  color: #ffe8cc;
+  text-decoration: none;
+  font-size: 1.1em;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-family: 'Merriweather', serif;
+}
+
+nav a:hover {
+  background-color: #e27d39;
+  color: #fff;
+  transform: translateX(4px);
+}
+
+nav::-webkit-scrollbar { width: 8px; }
+nav::-webkit-scrollbar-track { background: #5e2f00; }
+nav::-webkit-scrollbar-thumb {
+  background: #d97742;
+  border-radius: 10px;
+}
+nav::-webkit-scrollbar-thumb:hover { background: #c2622c; }
+
+/* ========== Main Content Layout ========== */
+main {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+  overflow-y: auto;
+  animation: fadeInMain 0.9s ease-in-out;
+  font-family: 'Merriweather', serif;
+}
+
+@keyframes fadeInMain {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+main::-webkit-scrollbar { width: 12px; }
+main::-webkit-scrollbar-track {
+  background: #ffecd1;
+  border-radius: 10px;
+}
+main::-webkit-scrollbar-thumb {
+  background: #d97742;
+  border-radius: 10px;
+}
+main::-webkit-scrollbar-thumb:hover { background: #c2622c; }
+
+/* Heading & Subtitle */
+main h1 {
+  font-family: 'Rock Salt', cursive; /* fancy font for headings */
+  font-size: 3.5em;
+  color: #5e2f00;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  transform: rotate(-1deg);
+  animation: fadeSlideDown 0.6s ease-in-out;
+}
+
+@keyframes fadeSlideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.subtitle {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: #5c3b26;
+  font-family: 'Merriweather', serif;
+}
+
+/* ========== Section Styling ========== */
+section {
+  margin-bottom: 60px;
+  animation: fadeInSection 0.7s ease forwards;
+  font-family: 'Merriweather', serif;
+}
+
+@keyframes fadeInSection {
+  0% { transform: translateY(30px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+section h2 {
+  font-family: 'Rock Salt', cursive;  /* fancy font for headings */
+  color: #a14b00;
+  font-size: 2.6em;
+  margin-bottom: 15px;
+  position: relative;
+  transform: rotate(-1.5deg);
+}
+section h2::after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 80px;
+  background-color: #e27d39;
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+section p,
+section li {
+  font-family: 'Merriweather', serif;
+  font-size: 1.25em;
+  color: #3b2a1d;
+  line-height: 1.9;
+  max-width: 80ch;
+  margin-bottom: 1.3em;
+  text-align: justify;
+}
+
+section p::first-letter {
+  font-size: 150%;
+  font-weight: bold;
+  color: #d97742;
+  float: left;
+  line-height: 1;
+  padding-right: 8px;
+}
+
+/* ========== Footer ========== */
+footer {
+  margin-top: 80px;
+  padding-top: 20px;
+  border-top: 1px solid #c5a880;
+  font-size: 1.1em;
+  color: #5c3b26;
+  font-family: 'Merriweather', serif;
+  text-align: center;
+}
+
+footer a {
+  color: #b45309;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+  font-family: 'Merriweather', serif;
+}
+footer a:hover { color: #78350f; text-decoration: underline; }
+
+/* ========== Responsive ========== */
+@media screen and (max-width: 900px) {
+  body { flex-direction: column; }
+  nav {
+    width: 100%;
+    border-radius: 0;
+    height: auto;
+    position: relative;
+  }
+  main { padding: 40px 20px; }
+}
+
+/* ========== Yellowstone Page Special Background ========== */
+body.yellowstone {
+  background:
+    linear-gradient(to right, rgba(255, 243, 224, 0.75), rgba(255, 232, 204, 0.75)),
+    url('bimg/yellowstone-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Merriweather', serif;
+}
+
+body.yellowstone main {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  margin: 20px;
+  font-family: 'Merriweather', serif;
+}
+
+body.yellowstone nav {
+  background: rgba(123, 63, 0, 0.85);
+}
+
+body.yellowstone img.park-photo {
+  width: 100%;
+  border-radius: 12px;
+  margin: 20px 0;
+}
